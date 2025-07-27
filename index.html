@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IELTS Study Dashboard</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h2>📘 IELTS Guide</h2>
+      <ul>
+        <li onclick="showSection('intro'); closeSidebarOnMobile()" class="active">🏠 Introduction</li>
+        <li onclick="showSection('study'); closeSidebarOnMobile()">🗓️ Study Plan</li>
+        <li onclick="showSection('modules'); closeSidebarOnMobile()">📂 IELTS Modules</li>
+        <li onclick="showSection('speaking'); closeSidebarOnMobile()">💬 Speaking Practice</li>
+        <li onclick="showSection('typing'); closeSidebarOnMobile()">⌨️ Typing Test</li>
+        <li onclick="showSection('vocab'); closeSidebarOnMobile()">🧠 Vocabulary</li>
+        <li onclick="showSection('resources'); closeSidebarOnMobile()">📚 Resources</li>
+    </ul>
+
+    </aside>
+<!-- Hamburger for Mobile -->
+<div class="hamburger" onclick="toggleSidebar()">☰ Menu</div>
+
+    <main class="main-content">
+      <div class="section" id="intro">
+        <div class="intro-card">
+          <div class="intro-header">
+            <h1>🎯 <span class="bold-text">Target Band: 6.0 – 7.0</span></h1>
+            <p class="subtext">Your personalized IELTS preparation dashboard</p>
+          </div>
+
+          <div class="welcome-block">
+            <h2>👋 Welcome!</h2>
+            <p>Select a section from the left to start your IELTS journey.</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="section hidden" id="study">
+        <h2>📅 8-Week IELTS Study Plan</h2>
+        <p>This roadmap helps you prepare step-by-step for the IELTS exam. Follow each week's focus and track your progress.</p>
+
+        <!-- Modal Popup -->
+        <div id="customModal" class="modal hidden">
+          <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3 id="modalTitle">Modal Title</h3>
+            <p id="modalText">Modal body content goes here.</p>
+          </div>
+        </div>
+
+        <div class="card-grid">
+
+          <!-- Repeat for Week 1 to Week 8 -->
+          <!-- START: Week Template -->
+          <!-- Replace Week N: and Title/Content accordingly -->
+
+          <!-- Week 1 -->
+          <div class="card">
+            <div class="card-title">
+              <div class="week-label">Week 1:</div>
+              <div class="week-title">📘 Orientation & Reading Basics</div>
+            </div>
+            <p>Understand the test structure. Begin reading short academic texts daily.</p>
+            <ul>
+              <li>▶️ Explore IELTS overview: <a href="https://www.ielts.org/about-the-test" target="_blank">Official Format</a></li>
+              <li>🧠 Learn scanning & skimming</li>
+              <li>📖 Read 1 article daily (BBC, NatGeo)</li>
+            </ul>
+            <div class="card-footer">
+              <button class="read-more">Read More</button>
+            </div>
+          </div>
+
+          <!-- Week 2 -->
+          <div class="card">
+            <div class="card-title">
+              <div class="week-label">Week 2:</div>
+              <div class="week-title">📖 Reading Practice</div>
+            </div>
+            <p>Practice full reading sections with time management.</p>
+            <ul>
+              <li>⏱️ 60-minute full section practice</li>
+              <li>📌 Learn question types: T/F/NG, MCQ</li>
+              <li>📺 Watch: <a href="https://www.youtube.com/watch?v=R4wYJGfU1JQ" target="_blank">IELTS Liz Reading Tips</a></li>
+            </ul>
+            <div class="card-footer">
+              <button class="read-more">Read More</button>
+            </div>
+          </div>
+
+          <!-- Week 3 -->
+          <div class="card">
+            <div class="card-title">
+              <div class="week-label">Week 3:</div>
+              <div class="week-title">✍️ Writing Task 1</div>
+            </div>
+            <p>Understand bar, pie, and line charts. Write summaries with structure.</p>
+            <ul>
+              <li>📊 Learn visuals & vocabulary</li>
+              <li>✍️ Write 3 Task 1 reports</li>
+              <li>📎 Sample answers: <a href="https://ielts-up.com/writing/academic-writing-task-1.html" target="_blank">IELTS-Up</a></li>
+            </ul>
+            <div class="card-footer">
+              <button class="read-more">Read More</button>
+            </div>
+          </div>
+
+          <!-- Week 4 -->
+          <div class="card">
+            <div class="card-title">
+              <div class="week-label">Week 4:</div>
+              <div class="week-title">🧠 Vocabulary Expansion</div>
+            </div>
+            <p>Focus on academic word lists and common IELTS topics.</p>
+            <ul>
+              <li>📚 Learn 50+ key academic words</li>
+              <li>📝 Make flashcards & quiz yourself</li>
+              <li>🎧 Listen & use new words in context</li>
+            </ul>
+            <div class="card-footer">
+              <button class="read-more">Read More</button>
+            </div>
+          </div>
+
+          <!-- Week 5 -->
+          <div class="card">
+            <div class="card-title">
+              <div class="week-label">Week 5:</div>
+              <div class="week-title">🗣️ Speaking Practice</div>
+            </div>
+            <p>Work on fluency, pronunciation and confidence.</p>
+            <ul>
+              <li>🎤 Practice Part 1, 2, 3 questions</li>
+              <li>📼 Record and review your answers</li>
+              <li>🤝 Practice with a partner or AI</li>
+            </ul>
+            <div class="card-footer">
+              <button class="read-more">Read More</button>
+            </div>
+          </div>
+
+          <!-- Week 6 -->
+          <div class="card">
+            <div class="card-title">
+              <div class="week-label">Week 6:</div>
+              <div class="week-title">✍️ Writing Task 2</div>
+            </div>
+            <p>Learn how to write opinion, discussion, and problem essays.</p>
+            <ul>
+              <li>📘 Understand essay structures</li>
+              <li>🧠 Brainstorm + plan essays</li>
+              <li>📝 Write and review 3 Task 2 essays</li>
+            </ul>
+            <div class="card-footer">
+              <button class="read-more">Read More</button>
+            </div>
+          </div>
+
+          <!-- Week 7 -->
+          <div class="card">
+            <div class="card-title">
+              <div class="week-label">Week 7:</div>
+              <div class="week-title">🎧 Listening Practice</div>
+            </div>
+            <p>Improve listening skills with real IELTS tests.</p>
+            <ul>
+              <li>🎧 Take 2 full listening tests</li>
+              <li>📝 Review transcripts & answers</li>
+              <li>📊 Analyze common mistakes</li>
+            </ul>
+            <div class="card-footer">
+              <button class="read-more">Read More</button>
+            </div>
+          </div>
+
+          <!-- Week 8 -->
+          <div class="card">
+            <div class="card-title">
+              <div class="week-label">Week 8:</div>
+              <div class="week-title">✅ Full Mock Test</div>
+            </div>
+            <p>Simulate the real test under timed conditions.</p>
+            <ul>
+              <li>📄 Take a full IELTS mock test</li>
+              <li>⏳ Use exact test timing rules</li>
+              <li>📈 Review results & set final goals</li>
+            </ul>
+            <div class="card-footer">
+              <button class="read-more">Read More</button>
+            </div>
+          </div>
+
+          <!-- END WEEKS -->
+        </div>
+      </div>
+
+        <div class="section hidden" id="modules">
+          <h2>📂 IELTS Modules</h2>
+
+          <!-- Reusable Modal for All Cards -->
+          <div id="moduleModal" class="modal hidden">
+            <div class="modal-content">
+              <span class="close-btn" onclick="closeModal()">&times;</span>
+              <h3 id="modalModuleTitle">Module Title</h3>
+              <p id="modalModuleText">More info will appear here...</p>
+            </div>
+          </div>
+
+          <div class="card-grid">
+
+            <!-- Reading -->
+            <div class="card">
+              <h3>📖 Reading</h3>
+              <p>3 passages, 40 questions. Focus on time and strategy.</p>
+              <ul>
+                <li>Use skimming and scanning skills</li>
+                <li>Answer types: T/F/NG, Matching</li>
+              </ul>
+              <div class="card-footer">
+                <button class="read-more" onclick="openModuleModal('Reading', `
+                📖 <strong>IELTS Reading</strong> includes 3 long texts and 40 questions.
+                <br><br>
+                🧠 Tips:
+                <ul>
+                  <li>Don’t read every word—scan fast!</li>
+                  <li>Practice with Cambridge books</li>
+                  <li>Note keywords in questions</li>
+                </ul>
+                🔗 <a href='https://ieltsliz.com/ielts-reading-tips/' target='_blank'>More Tips from IELTS Liz</a>
+                `)">Read More</button>
+              </div>
+            </div>
+
+          <!-- Writing -->
+          <div class="card">
+            <h3>✍️ Writing</h3>
+            <p>2 tasks: Task 1 (150 words), Task 2 (250 words).</p>
+            <ul>
+              <li>Graphs, maps, essays</li>
+              <li>Structure is key</li>
+            </ul>
+            <div class="card-footer">
+              <button class="read-more" onclick="openModuleModal('Writing', `
+              ✍️ <strong>IELTS Writing</strong> tests clarity and structure.
+              <br><br>
+              📝 Task 1: Describe visuals (charts, processes)<br>
+              🧠 Task 2: Argument or opinion essay.
+              <ul>
+                <li>Use 4-paragraph essay structure</li>
+                <li>Include examples, linking words</li>
+              </ul>
+              🔗 <a href='https://ielts-up.com/writing/academic-writing.html' target='_blank'>Writing Samples</a>
+              `)">Read More</button>
+            </div>
+          </div>
+
+          <!-- Listening -->
+          <div class="card">
+            <h3>🎧 Listening</h3>
+            <p>4 recordings, 40 questions. Practice with audio daily.</p>
+            <ul>
+              <li>Listen for key words</li>
+              <li>Check spelling carefully</li>
+            </ul>
+            <div class="card-footer">
+              <button class="read-more" onclick="openModuleModal('Listening', `
+              🎧 <strong>IELTS Listening</strong> includes 4 sections, each more difficult.
+              <br><br>
+              🧠 Tips:
+              <ul>
+                <li>Preview questions in 30 sec pauses</li>
+                <li>Write answers as you listen</li>
+                <li>Review with transcripts</li>
+              </ul>
+              🔗 <a href='https://ielts.org/about-the-test/listening' target='_blank'>Official Listening Guide</a>
+              `)">Read More</button>
+            </div>
+          </div>
+
+          <!-- Speaking -->
+          <div class="card">
+            <h3>🗣️ Speaking</h3>
+            <p>3 parts with an examiner. Practice is essential!</p>
+            <ul>
+              <li>Fluency > Accuracy</li>
+              <li>Record your answers</li>
+            </ul>
+            <div class="card-footer">
+              <button class="read-more" onclick="openModuleModal('Speaking', `
+              🗣️ <strong>IELTS Speaking</strong> is a face-to-face interview.
+              <br><br>
+              🎯 Part 1: Short questions<br>
+              📝 Part 2: 1-minute speech<br>
+              💬 Part 3: Discussion
+              <ul>
+                <li>Use a mirror or AI tool to practice</li>
+                <li>Avoid memorizing – speak naturally</li>
+              </ul>
+              🔗 <a href='https://ieltsliz.com/ielts-speaking-free-lessons-essential-tips/' target='_blank'>Speaking Tips</a>
+              `)">Read More</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+        <div class="section hidden" id="speaking">
+          <h2>💬 Speaking Practice</h2>
+          <p>Click below to practice real IELTS-style speaking questions.</p>
+          <div class="card-grid">
+
+            <div class="card">
+              <h3>🧍 Part 1 – Introduction & Interview</h3>
+              <button onclick="generateQuestion('part1')">Get Question</button>
+              <p id="part1-question" class="desc"></p>
+            </div>
+
+            <div class="card">
+              <h3>📝 Part 2 – Cue Card</h3>
+              <button onclick="generateQuestion('part2')">Get Cue Card</button>
+              <p id="part2-question" class="desc"></p>
+            </div>
+
+            <div class="card">
+              <h3>💬 Part 3 – Discussion</h3>
+              <button onclick="generateQuestion('part3')">Get Question</button>
+              <p id="part3-question" class="desc"></p>
+            </div>
+
+          </div>
+        </div>
+
+
+      <div class="section hidden" id="typing">
+        <h2>⌨️ Typing Speed Test</h2>
+        <p>Type this text: <em>The IELTS test improves your global communication.</em></p>
+        <textarea id="typingArea" placeholder="Start typing here..." oninput="calculateSpeed()"></textarea>
+        <p><strong>WPM:</strong> <span id="wpm">0</span></p>
+      </div>
+
+        <div class="section hidden" id="vocab">
+          <h2>🧠 Vocabulary Trainer</h2>
+          <div class="card">
+            <p><strong>Word:</strong> <span id="word">Click 'New Word'</span></p>
+            <p><strong>Meaning (English):</strong> <span id="meaning">–</span></p>
+            <p><strong>Meaning (বাংলা):</strong> <span id="meaning_bn">–</span></p>
+            <p><strong>Example:</strong> <span id="example">–</span></p>
+            <p><strong>Type:</strong> <span id="type">–</span></p>
+
+            <div style="margin-top: 10px;">
+              <button onclick="getNewWord()">New Word</button>
+              <button onclick="speakWord()">🔊 Pronounce</button>
+            </div>
+
+            <p style="margin-top: 15px;"><strong>🧮 Words Learned Today:</strong> <span id="wordCount">0</span></p>
+          </div>
+        </div>
+
+
+
+        <div class="section hidden" id="resources">
+          <h2>📚 IELTS Resources & Tools</h2>
+          <p>Explore trusted links for practice, tips, tests, and tools.</p>
+
+          <div class="card-grid">
+
+            <!-- Official -->
+            <div class="card">
+              <h3>🔥 IELTS Official</h3>
+              <p><a href="https://www.ielts.org/" target="_blank">www.ielts.org</a></p>
+              <p>The official IELTS website with registration, results, and preparation tips.</p>
+            </div>
+
+            <div class="card">
+              <h3>🏛️ British Council</h3>
+              <p><a href="https://takeielts.britishcouncil.org/" target="_blank">takeielts.britishcouncil.org</a></p>
+              <p>Book IELTS, find test dates, and access learning resources.</p>
+            </div>
+
+            <div class="card">
+              <h3>🌏 IDP IELTS</h3>
+              <p><a href="https://www.ieltsidpindia.com/" target="_blank">ieltsidpindia.com</a></p>
+              <p>Official IDP IELTS site for test booking and preparation help.</p>
+            </div>
+
+            <!-- Practice & Tips -->
+            <div class="card">
+              <h3>📘 IELTS Liz</h3>
+              <p><a href="https://ieltsliz.com/" target="_blank">ieltsliz.com</a></p>
+              <p>Trusted blog offering lessons, tips, and sample answers.</p>
+            </div>
+
+            <div class="card">
+              <h3>📘 IELTS Mentor</h3>
+              <p><a href="https://www.ielts-mentor.com/" target="_blank">ielts-mentor.com</a></p>
+              <p>Practice tests and model answers for all modules.</p>
+            </div>
+
+            <div class="card">
+              <h3>📘 Cambridge IELTS</h3>
+              <p><a href="https://www.cambridgeenglish.org/exams-and-tests/ielts/preparation/" target="_blank">cambridgeenglish.org</a></p>
+              <p>Official practice test materials from Cambridge.</p>
+            </div>
+
+            <!-- YouTube -->
+            <div class="card">
+              <h3>📺 IELTS with Emma</h3>
+              <p><a href="https://www.youtube.com/user/EnglishRyan" target="_blank">YouTube: EnglishRyan</a></p>
+              <p>High-quality video lessons for all IELTS sections.</p>
+            </div>
+
+            <div class="card">
+              <h3>📺 AcademicEnglishHelp</h3>
+              <p><a href="https://www.youtube.com/@AcademicEnglishHelp" target="_blank">YouTube Channel</a></p>
+              <p>Academic-focused tutorials, mock tests, and live sessions.</p>
+            </div>
+
+            <div class="card">
+              <h3>📺 E2 IELTS</h3>
+              <p><a href="https://www.youtube.com/@E2IELTS" target="_blank">YouTube: E2 IELTS</a></p>
+              <p>Interactive lessons with live tips and mock speaking tests.</p>
+            </div>
+
+            <!-- Tools -->
+            <div class="card">
+              <h3>🧪 IELTS Vocabulary Tool</h3>
+              <p><a href="https://www.ieltsbuddy.com/ielts-vocabulary.html" target="_blank">ieltsbuddy.com</a></p>
+              <p>Topic-wise academic vocabulary builder and exercises.</p>
+            </div>
+
+            <div class="card">
+              <h3>⌨️ Typing Practice</h3>
+              <p><a href="https://ielts-up.com/writing/typing-practice.html" target="_blank">ielts-up.com</a></p>
+              <p>Train your typing speed for computer-delivered writing tests.</p>
+            </div>
+
+            <div class="card">
+              <h3>🎤 Cue Card Generator</h3>
+              <p><a href="https://ieltsmaterial.com/speaking-cue-cards/" target="_blank">ieltsmaterial.com</a></p>
+              <p>Practice with randomly generated cue cards and sample answers.</p>
+            </div>
+
+          </div>
+        </div>
+
+
+    </main>
+  </div>
+  <footer class="footer">
+  <p>© 2025 Developed by <a href="https://www.facebook.com/saifuldevs/" target="_blank">Saiful</a></p>
+</footer>
+
+  <script src="vocab-data-bn.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
